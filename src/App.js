@@ -22,10 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <CardContainer />
-        {this.state.users.map((user) => (
-          <h1 key={user.id}>{user.name}</h1>
-        ))}
+        <CardContainer users={this.state.users} />
       </div>
     );
   }
