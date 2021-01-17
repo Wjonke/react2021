@@ -16,17 +16,14 @@ class App extends Component {
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((res) => res.json())
-      .then((users) => this.setState({ users: users }));
+      .then((users) => this.setState({ users: users }))
+      .catch('error fetching');
   }
 
   render() {
     return (
       <div className='App'>
-        <CardContainer>
-          {this.state.users.map((user) => (
-            <h1 key={user.id}>{user.name}</h1>
-          ))}
-        </CardContainer>
+        <CardContainer users={this.state.users} />
       </div>
     );
   }

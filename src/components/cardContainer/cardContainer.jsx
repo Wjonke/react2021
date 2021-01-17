@@ -1,13 +1,16 @@
 import React from 'react'
+import {Card} from '../card/card'
 import './cardContainer.css'
 
-export const CardContainer = (props) => {
-    return (
-        props.children.length > 1 ? 
-            <div className='card-container'>{props.children}</div> : 
-            <div><h1>NO LIST TO SHOW</h1></div> 
+export const CardContainer = props =>  (
+    <div className='card-container'>
+        {
+            props.users.map((user) => ( <Card key={user.id} user={user}/> )) 
+        }
+    </div>
+       
     )  
-}
+
 
 
 
