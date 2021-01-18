@@ -5,7 +5,7 @@ export const Card = (props) => {
     console.log(props.user);
     return (
         <div className='cardStyle'>
-            <img alt='user' src={`https://robohash.org/${props.user.id}?set=set2&size=180x250`}/>
+            <img alt='user' src={`https://robohash.org/${props.user.id}?set=set2&size=180x180`}/>
             <h2>{props.user.name}</h2>
             <p>ID: {props.user.id}</p>
             <p>Email: {props.user.email}</p>
