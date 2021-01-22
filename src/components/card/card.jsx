@@ -2,7 +2,6 @@ import React from 'react'
 import './card.css'
 
 export const Card = (props) => {
-    console.log(props.user);
     return (
         <div className='cardStyle'>
             <img alt='user' src={`https://robohash.org/${props.user.id}?set=set2&size=180x180`}/>
