@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { CardContainer } from './components/cardContainer/cardContainer';
-
+import { SearchBox } from './components/searchBox/searchBox';
 class App extends Component {
   constructor() {
     super();
@@ -32,12 +32,8 @@ class App extends Component {
 
     return (
       <div className='App'>
-        {console.log(this.state.searchField)}
-        <input
-          type='search'
-          placeholder='Search Users'
-          onChange={this.onChange}
-        />
+        <SearchBox onChange={this.onChange} placeholder='Search Users' />
+
         <CardContainer users={filteredUsers} />
       </div>
     );
