@@ -13,7 +13,7 @@ class App extends Component {
     };
   }
 
-  onChange = (e) => {
+  handleSearch = (e) => {
     this.setState({ searchField: e.target.value });
   };
 
@@ -27,12 +27,15 @@ class App extends Component {
   render() {
     const { users, searchField } = this.state;
     const filteredUsers = users.filter((user) =>
+      //this sets everything to lowercase so we don't have case issues while searching
       user.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
       <div className='App'>
-        <SearchBox onChange={this.onChange} placeholder='Search Users' />
+        <h1>User Rolodex</h1>
+
+        <SearchBox onChange={this.handleSearch} placeholder='Search Users' />
 
         <CardContainer users={filteredUsers} />
       </div>

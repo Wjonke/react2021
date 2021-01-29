@@ -5,6 +5,7 @@ import './cardContainer.css'
 export const CardContainer = props =>  (
     <div className='card-container'>
         {
+            
             props.users.map((user) => ( <Card key={user.id} user={user}/> )) 
         }
     </div>
